@@ -5,3 +5,4 @@ Werkzeug==2.2.3
 Pillow==9.3.0
 Flask-Mail==0.9.1
 pandas==1.5.3
+gunicorn==3.0.9
