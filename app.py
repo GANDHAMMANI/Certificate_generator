@@ -185,7 +185,8 @@ def send_certificate_via_email(name, certificate_path, recipient_email):
             <p>Congratulations! We are pleased to inform you that you have been awarded a certificate of appreciation.</p>
             <p>Please find your certificate attached below.</p>
             <div class="footer">
-                <p>Best Regards,<br>Your Organization Name</p>
+                <p>Best Regards,<br>Team InnoUdayVoyagers,
+Dept. of Data Science & Artifical Intelligence.</p>
             </div>
         </div>
     </body>
