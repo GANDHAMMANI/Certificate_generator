@@ -46,7 +46,8 @@ HARD_CODED_PASSWORD = generate_password_hash('p123', method='pbkdf2:sha256')  # 
 # Flask-Login loader function
 @login_manager.user_loader
 def load_user(user_id):
-    return User.query.get(int(user_id))
+    # Updated to use the session.get() method for SQLAlchemy 2.0
+    return db.session.get(User, user_id)
 
 # Routes
 @app.route('/')
@@ -69,7 +70,6 @@ def login():
         flash('Login failed. Check your credentials and try again.')
     
     return render_template('login.html')
-
 
 @app.route('/logout')
 @login_required
@@ -114,7 +114,10 @@ def generate_certificates():
             img = Image.open(template_path)
             draw = ImageDraw.Draw(img)
             font = ImageFont.truetype(FONT_PATH, FONT_SIZE)
-            text_width, text_height = draw.textsize(name, font=font)
+            # Updated to use textbbox
+            bbox = draw.textbbox((0, 0), name, font=font)  # Updated line
+            text_width = bbox[2] - bbox[0]  # Calculate width
+            text_height = bbox[3] - bbox[1]  # Calculate height
             image_width = img.width
             x_position = (image_width - text_width) / 2
             draw.text((x_position, Y_POSITION), name, font=font, fill="black")
@@ -130,7 +133,6 @@ def generate_certificates():
 
         flash('Certificates generated and sent successfully!')
         return redirect(url_for('download_page'))
-
 
 def send_certificate_via_email(name, certificate_path, recipient_email):
     msg = Message('Your Certificate of Appreciation', sender='gandhamsaketh073@gmail.com', recipients=[recipient_email])
@@ -179,14 +181,12 @@ def send_certificate_via_email(name, certificate_path, recipient_email):
         <div class="container">
             <div class="header">
                 <h1>Certificate of Appreciation</h1>
-               
             </div>
             <p>Dear {name},</p>
             <p>Congratulations! We are pleased to inform you that you have been awarded a certificate of appreciation.</p>
             <p>Please find your certificate attached below.</p>
             <div class="footer">
-                <p>Best Regards,<br>Team InnoUdayVoyagers,
-Dept. of Data Science & Artifical Intelligence.</p>
+                <p>Best Regards,<br>Team InnoUdayVoyagers,<br>Dept. of Data Science & Artificial Intelligence.</p>
             </div>
         </div>
     </body>
@@ -199,8 +199,6 @@ Dept. of Data Science & Artifical Intelligence.</p>
 
     # Send the email
     mail.send(msg)
-
-
 
 @app.route('/download')
 @login_required
