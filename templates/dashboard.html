@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>Dashboard - Certificate Generator</title>
+    <style>
+        /* Set the GIF background */
+        body {
+            background-image: url("static/download.gif");  /* Your GIF here */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Ensure container is centered and responsive */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 50px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .card button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .card button:hover {
+            background-color: #218838;
+        }
+
+        .card input[type="file"] {
+            margin-top: 10px;
+        }
+
+        /* Button styling */
+        .btn {
+            display: inline-block;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #dc3545;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #c82333;
+        }
+
+        .btn-block {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .logo {
+            text-align: center;
+            background: darkblue;
+            padding: 20px 0;
+        }
+
+        .logo a {
+            font-size: 36px;
+            text-transform: uppercase;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .logo a em {
+            font-style: normal;
+            color: #f5a425;
+        }
+
+        .logo img {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .card {
+                width: 100%;
+            }
+
+            .btn-block {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .logo a {
+                font-size: 28px;
+            }
+
+            .logo img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="static/logo_circle.png" width="100" height="100">
+        <a href="#"><em>DS</em></a>
+        <img src="static/pbsiddhartha.ac.in.jpeg" width="1150" height="150">
+        <a href="#">AI</a>
+        <img src="static/logo_circle.png" width="100" height="100">
+    </div>
+    
+    <h1 style="text-align: center; color: #fff; margin-top: 20px;">Select a Certificate Template</h1>
+
+    <div class="container">
+        <!-- Template 1 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='templates/template1.png') }}" alt="Template 1">
+            <strong>Event</strong>
+            <form action="{{ url_for('generate_certificates') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="template" value="template1.png">
+                <input type="file" name="file" accept=".csv" required>
+                <button type="submit">Generate Certificates</button>
+            </form>
+        </div>
+        <!-- Template 2 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='templates/template2.png') }}" alt="Template 2">
+            <strong>Event</strong>
+            <form action="{{ url_for('generate_certificates') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="template" value="template2.png">
+                <input type="file" name="file" accept=".csv" required>
+                <button type="submit">Generate Certificates</button>
+            </form>
+        </div>
+        <!-- Template 3 -->
+        <div class="card">
+            <img src="{{ url_for('static', filename='templates/template1.png') }}" alt="Template 1">
+            <strong>Event</strong>
+            <form action="{{ url_for('generate_certificates') }}" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="template" value="template1.png">
+                <input type="file" name="file" accept=".csv" required>
+                <button type="submit">Generate Certificates</button>
+            </form>
+        </div>
+
+        <!-- Logout Button -->
+        <a href="{{ url_for('logout') }}" class="btn btn-danger btn-block btn-large">Logout</a>
+    </div>
+</body>
+</html>

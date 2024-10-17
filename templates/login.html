@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Certificate Generator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Background settings for GIF */
+        body {
+            background-image: url("static/login_bg.gif");  /* Add your GIF background here */
+            background-size: cover;                        /* Ensures the GIF covers the entire background */
+            background-position: center;                   /* Centers the GIF */
+            background-attachment: fixed;                  /* Keeps the background fixed when scrolling */
+            background-color: rgba(0, 0, 0, 0.5);          /* Optional: Adds a slight dark overlay for readability */
+            background-blend-mode: darken;                 /* Optional: Darkens the background */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Container animation and styling */
+        .container {
+            max-width: 500px;
+            padding: 30px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.9);          /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        /* Add hover effects for the form container */
+        .form-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Custom button styles with animation */
+        .btn-custom {
+            background-color: #343a40;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #495057;
+            transform: scale(1.1);
+        }
+
+        /* Flash message animation */
+        .alert {
+            animation: slideIn 0.8s ease;
+        }
+
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center mb-4">Login</h2>
+
+            <!-- Flash message block -->
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+              <div class="alert alert-warning" role="alert">
+                {{ messages[0] }}
+              </div>
+            {% endif %}
+            {% endwith %}
+            <!-- End of Flash message block -->
+
+            <form action="{{ url_for('login') }}" method="POST">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

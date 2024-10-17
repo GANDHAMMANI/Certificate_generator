@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <!-- Ensure mobile responsiveness -->
+    <title>Download Certificates - Certificate Generator</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Add the GIF background */
+        body {
+            background-image: url("static/download_page.jpeg");  /* Add your GIF background here */
+            background-size: cover;          /* Make sure the GIF covers the entire screen */
+            background-position: center;     /* Center the background */
+            background-attachment: fixed;    /* Ensure the background stays fixed during scrolling */
+            color: #fff;  /* Optional: Set text color to ensure readability */
+        }
+
+        .container {
+            margin-top: 50px;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.9); /* Slight white overlay for readability */
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            background-color: #343a40;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #495057;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        th, td {
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+
+            th, td {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            th, td {
+                font-size: 12px;
+            }
+
+            .btn-custom, .btn-primary {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+        }
+        h2{
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center mb-4">Generated Certificates</h2>
+
+        <!-- Table to list certificates -->
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>SNO</th>
+                    <th>Certificate Name</th>
+                    <th>Download</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for certificate in certificates %}
+                <tr>
+                    <td>{{ loop.index }}</td> <!-- Serial number -->
+                    <td>{{ certificate }}</td> <!-- Certificate filename -->
+                    <td>
+                        <a href="{{ url_for('static', filename='certificates/' + certificate) }}" class="btn btn-custom" download>Download</a>
+                    </td> <!-- Download button -->
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <!-- Flash message block -->
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        <a href="{{ url_for('dashboard') }}" class="btn btn-primary mt-4">Go back to Dashboard</a>
+    </div>
+</body>
+</html>

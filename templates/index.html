@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Certificate Generator - Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("static/background.gif");  /* Add your GIF here */
+            background-size: cover;          /* Ensures the GIF covers the entire background */
+            background-position: center;     /* Centers the GIF */
+            background-attachment: fixed;    /* Keeps the background fixed when scrolling */
+            background-color: rgba(0, 0, 0, 0.5);  /* Optional: Adds a slight dark overlay for better text visibility */
+            background-blend-mode: darken;   /* Optional: Darkens the background for readability */
+            color: white;                    /* Ensures the text is visible on the GIF background */
+            height: 100vh;                   /* Full viewport height */
+            margin: 0;                       /* Remove default margin */
+            display: flex;                   /* Enable Flexbox */
+            justify-content: center;         /* Horizontally center the content */
+            align-items: center;             /* Vertically center the content */
+        }
+        
+        .container {
+            text-align: center;              /* Center text inside the container */
+            /* Optional: Transparent background for readability */
+            padding: 20px;
+            border-radius: 10px;             /* Rounded corners for the container */
+        }
+
+        .btn-custom {
+            background-color: #343a40;
+            color: blue;
+            width: 200px;
+            margin: 10px;
+        }
+
+        .btn-custom:hover {
+            background-color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Certificate Generator</h1>
+        <p class="lead">Please <a href="{{ url_for('login') }}" style="color: liteblue;">Login</a> to continue.</p>
+    </div>
+</body>
+</html>
