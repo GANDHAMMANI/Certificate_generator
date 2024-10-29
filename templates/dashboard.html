@@ -6,151 +6,161 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Dashboard - Certificate Generator</title>
     <style>
-        /* Background styling */
-        body {
-            background-image: url("static/download.gif");
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
-            color: #fff;
-        }
+    /* Background styling */
+    body {
+        background-image: url("static/download.gif");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
 
-        /* Centered container with responsive wrapping */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
-        }
+    /* Centered container with responsive wrapping */
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
 
-        /* Card styling */
+    /* Card styling */
+    .card {
+        flex: 1 1 280px;
+        max-width: 320px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 20px;
+        margin-bottom: 30px;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .card button {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+
+    .card button:hover {
+        background-color: #218838;
+    }
+
+    .card input[type="file"] {
+        margin-top: 10px;
+    }
+
+    /* Primary button */
+    .btn {
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #dc3545;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        max-width: 200px;
+        width: 100%;
+    }
+
+    .btn:hover {
+        background-color: #c82333;
+    }
+
+    /* Centering logo */
+    .logo {
+        text-align: center;
+        background: darkblue;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: auto;
+        height: 80px;
+    }
+
+    .logo a {
+        font-size: 2rem;
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #fff;
+        margin: 0 10px;
+    }
+
+    .logo a em {
+        font-style: normal;
+        color: #f5a425;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         .card {
-            flex: 1 1 280px;
-            max-width: 320px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            padding: 20px;
-            margin-bottom: 30px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            max-width: 100%;
+            flex: 1 1 100%;
         }
-
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
-            width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-
-        .card button {
-            background-color: #28a745;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        .card button:hover {
-            background-color: #218838;
-        }
-
-        .card input[type="file"] {
-            margin-top: 10px;
-        }
-
-        /* Primary button */
-        .btn {
-            font-size: 1rem;
-            font-weight: 700;
-            padding: 10px 20px;
-            color: #fff;
-            background-color: #dc3545;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-            max-width: 200px;
-            width: 100%;
-        }
-
-        .btn:hover {
-            background-color: #c82333;
-        }
-
-        /* Centering logo */
-        .logo {
-            text-align: center;
-            background: darkblue;
+        .container {
             padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
         }
-
+        .btn {
+            max-width: 100%;
+        }
         .logo img {
-            width: auto;
-            height: 80px;
-            margin: 0 10px;
+            height: 60px;
         }
+    }
 
+    /* Adjustments for mobile view (phones) */
+    @media (max-width: 576px) {
+        /* Stack logo elements vertically */
+        .logo {
+            flex-direction: column;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo img {
+            height: 50px;
+            margin: 5px 0;
+        }
         .logo a {
-            font-size: 2rem;
-            text-transform: uppercase;
-            font-weight: 800;
-            color: #fff;
-            margin: 0 10px;
+            font-size: 1.5rem;
+            margin: 5px 0;
         }
 
-        .logo a em {
-            font-style: normal;
-            color: #f5a425;
+        .btn {
+            font-size: 0.875rem;
+            padding: 8px 16px;
         }
+    }
+</style>
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .card {
-                max-width: 100%;
-                flex: 1 1 100%;
-            }
-            .container {
-                padding: 10px;
-            }
-            .btn {
-                max-width: 100%;
-            }
-            .logo img {
-                height: 60px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .logo a {
-                font-size: 1.5rem;
-            }
-            .logo img {
-                height: 50px;
-            }
-            .btn {
-                font-size: 0.875rem;
-                padding: 8px 16px;
-            }
-        }
-    </style>
 </head>
 <body>
     <div class="logo">
