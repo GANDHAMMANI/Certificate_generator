@@ -4,12 +4,14 @@ This project is a Flask-based certificate generator designed to reduce teachers'
 
 ## 📑 Table of Contents
 
-- [✨ Features](#features)
-- [⚙️ Installation](#installation)
-- [🚀 Usage](#usage)
-- [🔧 Configuration](#configuration)
-- [🤝 Contributing](#contributing)
-- [📜 License](#license)
+<div style="margin-bottom: 1em;">
+  <a href="#features" style="text-decoration: none; color: #007BFF; margin-right: 1em;">✨ Features</a>
+  <a href="#installation" style="text-decoration: none; color: #007BFF; margin-right: 1em;">⚙️ Installation</a>
+  <a href="#usage" style="text-decoration: none; color: #007BFF; margin-right: 1em;">🚀 Usage</a>
+  <a href="#configuration" style="text-decoration: none; color: #007BFF; margin-right: 1em;">🔧 Configuration</a>
+  <a href="#contributing" style="text-decoration: none; color: #007BFF; margin-right: 1em;">🤝 Contributing</a>
+
+</div>
 
 ## ✨ Features
 
@@ -89,5 +91,4 @@ This project is a Flask-based certificate generator designed to reduce teachers'
 3. Commit your changes (`git commit -m 'Add new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a Pull Request.
-
 
