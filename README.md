@@ -4,14 +4,21 @@ This project is a Flask-based certificate generator designed to reduce teachers'
 
 ## 📑 Table of Contents
 
-<div style="margin-bottom: 1em;">
-  <a href="#features" style="text-decoration: none; color: #007BFF; margin-right: 1em;">✨ Features</a>
-  <a href="#installation" style="text-decoration: none; color: #007BFF; margin-right: 1em;">⚙️ Installation</a>
-  <a href="#usage" style="text-decoration: none; color: #007BFF; margin-right: 1em;">🚀 Usage</a>
-  <a href="#configuration" style="text-decoration: none; color: #007BFF; margin-right: 1em;">🔧 Configuration</a>
-  <a href="#contributing" style="text-decoration: none; color: #007BFF; margin-right: 1em;">🤝 Contributing</a>
-
+<div style="display: flex; flex-direction: column; gap: 0.5em; margin-bottom: 1em;">
+  <a href="#features" style="text-decoration: none; color: #007BFF;">✨ Features</a><br>
+  <a href="#installation" style="text-decoration: none; color: #007BFF;">⚙️ Installation</a><br>
+  <a href="#usage" style="text-decoration: none; color: #007BFF;">🚀 Usage</a><br>
+  <a href="#configuration" style="text-decoration: none; color: #007BFF;">🔧 Configuration</a><br>
+  <a href="#contributing" style="text-decoration: none; color: #007BFF;">🤝 Contributing</a>
 </div>
+
+## 📹 Demo Video
+
+Check out the demo video to see how the Certificate Generator works:
+
+[![Watch the demo video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](LINK_TO_YOUR_VIDEO)
+
+> Replace `LINK_TO_YOUR_VIDEO` with the actual link to your video on GitHub.
 
 ## ✨ Features
 
