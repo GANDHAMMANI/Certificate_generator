@@ -13,6 +13,7 @@ This project is a Flask-based certificate generator designed to reduce teachers'
 </div>
 
 ## 📹 Demo Video
+![XDZT](https://github.com/user-attachments/assets/e1ff2289-3a37-4e55-a9ec-6748fbcaf2b0)
 
 Check out the demo video to see how the Certificate Generator works:
 
