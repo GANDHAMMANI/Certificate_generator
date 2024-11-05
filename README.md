@@ -2,32 +2,34 @@
 
 This project is a Flask-based certificate generator designed to reduce teachers' workload when issuing event certificates to students. Teachers can select a certificate template, upload a CSV with recipient names and emails, and the system will generate certificates in PDF format, sending them directly to each student's email. The project is especially useful for educational institutions for efficient certificate distribution after events.
 
-## 📑 Table of Contents
-
-<div style="display: flex; flex-direction: column; gap: 0.5em; margin-bottom: 1em;">
-  <a href="#features" style="text-decoration: none; color: #007BFF;">✨ Features</a><br>
-  <a href="#installation" style="text-decoration: none; color: #007BFF;">⚙️ Installation</a><br>
-  <a href="#usage" style="text-decoration: none; color: #007BFF;">🚀 Usage</a><br>
-  <a href="#configuration" style="text-decoration: none; color: #007BFF;">🔧 Configuration</a><br>
-  <a href="#contributing" style="text-decoration: none; color: #007BFF;">🤝 Contributing</a>
-</div>
 
 ## 📹 Demo Video
-![XDZT](https://github.com/user-attachments/assets/e1ff2289-3a37-4e55-a9ec-6748fbcaf2b0)
 
 Check out the demo video to see how the Certificate Generator works:
 
-[![Watch the demo video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](LINK_TO_YOUR_VIDEO)
 
-> Replace `LINK_TO_YOUR_VIDEO` with the actual link to your video on GitHub.
+
+> Replace `[LINK_TO_YOUR_VIDEO](https://drive.google.com/file/d/1raL2OT-8IrNxIVRWUk8EZo7lIjj5UFHB/view?usp=drive_link)` with the actual link to your video on GitHub.
+
+## 📑 Table of Contents
+
+<div style="display: flex; flex-direction: column; gap: 0.5em; margin-bottom: 1em;">
+  <a href="#features" style="text-decoration: none; color: #007BFF; font-weight: bold;">✨ Features</a>
+  <a href="#installation" style="text-decoration: none; color: #007BFF; font-weight: bold;">⚙️ Installation</a>
+  <a href="#usage" style="text-decoration: none; color: #007BFF; font-weight: bold;">🚀 Usage</a>
+  <a href="#configuration" style="text-decoration: none; color: #007BFF; font-weight: bold;">🔧 Configuration</a>
+  <a href="#contributing" style="text-decoration: none; color: #007BFF; font-weight: bold;">🤝 Contributing</a>
+  <a href="#license" style="text-decoration: none; color: #007BFF; font-weight: bold;">📜 License</a>
+</div>
+
 
 ## ✨ Features
 
-- **Template Selection:** Users can choose from multiple certificate templates, displayed in a card-style layout similar to an e-commerce platform.
-- **Bulk Certificate Generation:** Generates certificates for multiple recipients from a CSV file.
-- **PDF Conversion:** Converts certificate images to PDF format.
-- **Email Delivery:** Sends certificates to recipients' emails in PDF format.
-- **User Dashboard:** Provides an intuitive interface for template selection, CSV upload, and certificate generation.
+- **Template Selection:** Users can choose from multiple certificate templates, displayed in a card-style layout similar to an e-commerce platform. 🎨
+- **Bulk Certificate Generation:** Generates certificates for multiple recipients from a CSV file. 📊
+- **PDF Conversion:** Converts certificate images to PDF format. 🖨️
+- **Email Delivery:** Sends certificates to recipients' emails in PDF format. ✉️
+- **User Dashboard:** Provides an intuitive interface for template selection, CSV upload, and certificate generation. 📋
 
 ## 🔐 Default Credentials
 
@@ -67,6 +69,17 @@ Check out the demo video to see how the Certificate Generator works:
      ```
    - ⚠️ **Note:** Ensure these credentials are kept secure and avoid sharing your email password publicly.
 
+## 📊 CSV File Format
+
+To generate certificates, the uploaded CSV file must contain the following columns:
+
+| Rollno (optional) | Name         | Class | Email               |
+|--------           |--------------|-------|---------------------|
+| 1                 | John Doe     | 10A   | johndoe@example.com |
+| 2                 | Jane Smith   | 10B   | janesmith@example.com |
+
+Make sure to include the **`Rollno`**, **`Name`**, **`Class`**, and **`Email`** column headers in your CSV file. 🗂️
+
 ## 🚀 Usage
 
 1. **▶️ Run the Application**
@@ -80,7 +93,7 @@ Check out the demo video to see how the Certificate Generator works:
 
 3. **🖼️ Select a Template and Upload CSV**
    - In the dashboard, choose a template by clicking on the desired template card.
-   - Upload a CSV file with columns `Name` and `Email`.
+   - Upload a CSV file with columns `Rollno`, `Name`, `Class`, and `Email`.
 
 4. **📄 Generate and Send Certificates**
    - Click "Generate Certificates" to start the generation process.
@@ -99,4 +112,5 @@ Check out the demo video to see how the Certificate Generator works:
 3. Commit your changes (`git commit -m 'Add new feature'`).
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a Pull Request.
+
 
