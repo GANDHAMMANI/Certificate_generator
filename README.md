@@ -2,14 +2,11 @@
 
 This project is a Flask-based certificate generator designed to reduce teachers' workload when issuing event certificates to students. Teachers can select a certificate template, upload a CSV with recipient names and emails, and the system will generate certificates in PDF format, sending them directly to each student's email. The project is especially useful for educational institutions for efficient certificate distribution after events.
 
-
 ## 📹 Demo Video
 
 Check out the demo video to see how the Certificate Generator works:
 
-
-
-> Replace `[LINK_TO_YOUR_VIDEO](https://drive.google.com/file/d/1raL2OT-8IrNxIVRWUk8EZo7lIjj5UFHB/view?usp=drive_link)` with the actual link to your video on GitHub.
+[![Watch the demo video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://drive.google.com/file/d/1raL2OT-8IrNxIVRWUk8EZo7lIjj5UFHB/view?usp=drive_link)
 
 ## 📑 Table of Contents
 
@@ -21,7 +18,6 @@ Check out the demo video to see how the Certificate Generator works:
   <a href="#contributing" style="text-decoration: none; color: #007BFF; font-weight: bold;">🤝 Contributing</a>
   <a href="#license" style="text-decoration: none; color: #007BFF; font-weight: bold;">📜 License</a>
 </div>
-
 
 ## ✨ Features
 
@@ -74,9 +70,9 @@ Check out the demo video to see how the Certificate Generator works:
 To generate certificates, the uploaded CSV file must contain the following columns:
 
 | Rollno (optional) | Name         | Class | Email               |
-|--------           |--------------|-------|---------------------|
-| 1                 | John Doe     | 10A   | johndoe@example.com |
-| 2                 | Jane Smith   | 10B   | janesmith@example.com |
+|-------------------|--------------|-------|---------------------|
+| 1                 | John Doe    | 10A   | johndoe@example.com |
+| 2                 | Jane Smith  | 10B   | janesmith@example.com |
 
 Make sure to include the **`Rollno`**, **`Name`**, **`Class`**, and **`Email`** column headers in your CSV file. 🗂️
 
@@ -113,4 +109,6 @@ Make sure to include the **`Rollno`**, **`Name`**, **`Class`**, and **`Email`** 
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a Pull Request.
 
+## 📜 License
 
+This project is licensed under the MIT License.
