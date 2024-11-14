@@ -8,8 +8,10 @@ Check out the demo video to see how the Certificate Generator works:
 
 https://github.com/user-attachments/assets/e65597cc-6db8-489b-804b-6ea5b3e93c6c
 
-
+**This is the dashboard** 
 ![image](https://github.com/user-attachments/assets/a06c7f2a-7b69-41e0-bf08-a064b57952a1)
+**After the certificates are generated the certificates will be sent to their respective email id's**
+
 ![image](https://github.com/user-attachments/assets/10f7db9f-2548-4058-9d3d-bbe9a1b1287f)
 
 ## 📑 Table of Contents
