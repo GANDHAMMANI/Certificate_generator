@@ -6,18 +6,22 @@ This project is a Flask-based certificate generator designed to reduce teachers'
 
 Check out the demo video to see how the Certificate Generator works:
 
-[![Watch the demo video](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://drive.google.com/file/d/1raL2OT-8IrNxIVRWUk8EZo7lIjj5UFHB/view?usp=drive_link)
+https://github.com/user-attachments/assets/e65597cc-6db8-489b-804b-6ea5b3e93c6c
+
+
+![image](https://github.com/user-attachments/assets/a06c7f2a-7b69-41e0-bf08-a064b57952a1)
+![image](https://github.com/user-attachments/assets/10f7db9f-2548-4058-9d3d-bbe9a1b1287f)
 
 ## 📑 Table of Contents
 
-<div style="display: flex; flex-direction: column; gap: 0.5em; margin-bottom: 1em;">
-  <a href="#features" style="text-decoration: none; color: #007BFF; font-weight: bold;">✨ Features</a>
-  <a href="#installation" style="text-decoration: none; color: #007BFF; font-weight: bold;">⚙️ Installation</a>
-  <a href="#usage" style="text-decoration: none; color: #007BFF; font-weight: bold;">🚀 Usage</a>
-  <a href="#configuration" style="text-decoration: none; color: #007BFF; font-weight: bold;">🔧 Configuration</a>
-  <a href="#contributing" style="text-decoration: none; color: #007BFF; font-weight: bold;">🤝 Contributing</a>
-  <a href="#license" style="text-decoration: none; color: #007BFF; font-weight: bold;">📜 License</a>
-</div>
+
+## Table of Contents
+- [✨ Features](#project-overview)
+- [⚙️ Installation](#installation)
+- [🚀 Usage](#usage)
+- [🔧 Configuration](#configuration)
+- [🤝 Contributing](#usage)
+
 
 ## ✨ Features
 
@@ -26,7 +30,8 @@ Check out the demo video to see how the Certificate Generator works:
 - **PDF Conversion:** Converts certificate images to PDF format. 🖨️
 - **Email Delivery:** Sends certificates to recipients' emails in PDF format. ✉️
 - **User Dashboard:** Provides an intuitive interface for template selection, CSV upload, and certificate generation. 📋
-
+## 🚀 Deployment
+I have deployed this in thérender platform you can access it [here](https://certificate-generator-xhh3.onrender.com) 
 ## 🔐 Default Credentials
 
 - **Email:** `gandhammani2421@gmail.com`
@@ -103,12 +108,9 @@ Make sure to include the **`Rollno`**, **`Name`**, **`Class`**, and **`Email`** 
 
 ## 🤝 Contributing
 
-1. Fork the repository.
-2. Create a feature branch (`git checkout -b feature-branch`).
-3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a Pull Request.
+-  Fork the repository.
+- Create a feature branch .
+- Commit your changes.
+- Push to the branch.
+- Open a Pull Request.
 
-## 📜 License
-
-This project is licensed under the MIT License.
